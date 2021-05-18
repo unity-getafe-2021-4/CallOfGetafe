@@ -6,7 +6,7 @@ Shader "Custom/DissolveSurface" {
 		_Metallic ("Metallic", Range(0,1)) = 0.0
  
 		//Dissolve properties
-		_DissolveTexture("Dissolve Texutre", 2D) = "white" {} 
+		_DissolveTexture("Dissolve Texture", 2D) = "white" {} 
 		_Amount("Amount", Range(0,1)) = 0
 	}
  

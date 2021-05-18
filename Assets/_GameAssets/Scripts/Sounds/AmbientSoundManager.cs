@@ -43,7 +43,7 @@ public class AmbientSoundManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine("FadeOut");
     }
-    IEnumerator FadeIn() 
+    IEnumerator FadeIn()
     {
         for(int i=0;i<100;i++) {
             audioSource.volume+=delta;
