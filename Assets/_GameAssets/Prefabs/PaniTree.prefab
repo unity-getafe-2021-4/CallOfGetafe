@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2443347435269684188}
   - component: {fileID: 7771069238915284144}
   - component: {fileID: 726445775637696811}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PaniTree_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7545285774698890480}
   - component: {fileID: 7545285774698890481}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PaniTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
