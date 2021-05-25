@@ -34,17 +34,17 @@ public abstract class MobileEnemy : Enemy
         {
             Instantiate(prefabPSDeath, transform.position, transform.rotation);
             //Alternativa triste
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            Destroy(this);
+            //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            //Destroy(this);
             //Alternativa piadosa
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
     public virtual void Rotate()
     {
-        int determinante = Random.Range(0, 100);//Número entero entre 0 y 100
-        int signo = determinante > 50 ? 1 : -1;//Expresión ternaria, tiene el mismo significado que el código siguiente
+        int determinante = Random.Range(0, 100);//Nï¿½mero entero entre 0 y 100
+        int signo = determinante > 50 ? 1 : -1;//Expresiï¿½n ternaria, tiene el mismo significado que el cï¿½digo siguiente
         /*
         if (determinante > 50)
         {

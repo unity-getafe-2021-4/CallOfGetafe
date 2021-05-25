@@ -15,6 +15,6 @@ public abstract class Weapon : MonoBehaviour
 
     public  void FailShoot()
     {
-        //TODO. Programar qué hacer cuando no haya munición o no haya transcurrido el tiempo
+        //TODO. Programar quï¿½ hacer cuando no haya municiï¿½n o no haya transcurrido el tiempo
     }
 }

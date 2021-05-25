@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    public int maxHealth;
     public int health;
     public GameObject prefabPSDamage;
     public GameObject prefabPSDeath;
@@ -12,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        health = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
@@ -25,22 +27,27 @@ public abstract class Enemy : MonoBehaviour
     }
 
     /// <summary>
-    /// Determina si el player está a la vista o no
+    /// Determina si el player estï¿½ a la vista o no
     /// </summary>
     /// <returns></returns>
     public bool PlayerDetected()
     {
-        //TODO Programar si está viendo al Player
+        //TODO Programar si estï¿½ viendo al Player
         return true;
     }
 
-
     /// <summary>
-    /// Inflinge un daño al enemigo
+    /// Inflinge un danyo al enemigo
     /// </summary>
-    public void ReceiveDamage()
+    public void ReceiveDamage(int damage, Vector3 impactPosition, Vector3 normal)
     {
-        //TODO sistema de partículas, emitir un sonido, quitar salud, comprobar si ha muerto
+        health-=damage;
+        if (health<=0) {
+            Death();
+        } else {
+            GameObject psDamage = Instantiate(prefabPSDamage, impactPosition, Quaternion.LookRotation(normal));
+            psDamage.transform.SetParent(transform);
+        }
     }
 
     /// <summary>
@@ -48,7 +55,8 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     public void Death()
     {
-        //TODO sistema de partículas, emitir un sonido y destruir el objeto
+        //TODO sistema de particulas, emitir un sonido y destruir el objeto
+        Destroy(gameObject);
     }
 
     /// <summary>

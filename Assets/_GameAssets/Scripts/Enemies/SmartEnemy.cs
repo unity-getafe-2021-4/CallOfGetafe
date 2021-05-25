@@ -9,11 +9,12 @@ public class SmartEnemy : MobileEnemy {
 
     public override void Update()
     {
-        base.Update();//Ejecuta la implementación de Update de la clase base
+        base.Update();//Ejecuta la implementaciï¿½n de Update de la clase base
         if (distanceToPlayer <= followDistance)
         {
-            transform.LookAt(player.transform.position);
-        }
+            Vector3 target = new Vector3(player.transform.position.x, transform.position.y ,player.transform.position.z);
+            transform.LookAt(target);
+        } 
         Move();
     }
     public override void Rotate()
