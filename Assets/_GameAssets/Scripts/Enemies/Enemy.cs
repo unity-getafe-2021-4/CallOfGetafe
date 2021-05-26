@@ -55,7 +55,7 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     public void Death()
     {
-        //TODO sistema de particulas, emitir un sonido y destruir el objeto
+        GameObject psDamage = Instantiate(prefabPSDeath, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
