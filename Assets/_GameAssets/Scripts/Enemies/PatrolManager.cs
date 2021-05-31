@@ -31,7 +31,7 @@ public class PatrolManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nma.remainingDistance <= nma.stoppingDistance)
+        if (nma.remainingDistance <= nma.stoppingDistance+0.1f)
         {
             if (!hasDestination)
             {
@@ -67,5 +67,10 @@ public class PatrolManager : MonoBehaviour
         {
             nma.SetDestination(patrolPoints[currentPoint].transform.position);
         }
+    }
+
+    public void SetExternalDestination(Vector3 target)
+    {
+        nma.SetDestination(target);
     }
 }
